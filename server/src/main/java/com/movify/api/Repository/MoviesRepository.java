@@ -16,7 +16,7 @@ public interface MoviesRepository {
 	
 	public List<Movies> MovieList( String movie);
 	
-	public List<Movies> MovieList( String movie, String mType, String genre);
+	public List<Movies> MovieList( String mType, String genre);
 	
 	
 	

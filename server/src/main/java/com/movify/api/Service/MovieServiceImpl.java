@@ -11,6 +11,7 @@ import com.movify.api.Entity.Movies;
 
 public class MovieServiceImpl implements MovieService {
 
+
 	public List<Movies> listAll() {
 		
 		return null;

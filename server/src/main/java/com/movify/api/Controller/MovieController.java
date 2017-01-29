@@ -17,4 +17,43 @@ import com.movify.api.Service.MovieService;
 
 public class MovieController {
 
+	@Autowired
+	private MovieService mservice;
+	
+	@RequestMapping(method= RequestMethod.GET)
+	public List<Movies> listAll(){
+		
+		return mservice.listAll();
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "{id}")
+	public List<Movies> getMovies(@PathVariable("id") String namepattern){
+		return mservice.getMovies(namepattern);
+		
+	}
+	
+	public List<Movies> getTopRatedMovies(){
+		
+	}
+	
+	public List<Movies> getTopRatedtvSeries(){
+		
+	}
+	
+	public List<Movies> getMoviesonYear(String Year){
+		
+		
+	}
+	
+	public List<Movies> getMoviesonGenre(String genre){
+		
+	}
+	
+	public List<Movies> getMoviesonType(String Type){
+		
+		
+	}
+	
+	
+	
 }
