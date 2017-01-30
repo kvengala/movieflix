@@ -1,0 +1,32 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("images/homescreen_background.jpg");
+}
+#logo {
+  float: left;
+  height: 120px;
+  width: 490px;
+  background-image: url("images/Logo.png");
+}
+#signup {
+  float: right;
+  height: 120px;
+  width: 120px;
+  font: 14px;
+}
+.Signinbutton {
+  width: 100px;
+  height: 50px;
+  font: 14px bold;
+}
+.Signinbutton background-color:black {
+  border: double;
+  color: #fff;
+  text-align: center;
+  text-decoration: inherit;
+  display: inline;
+}
+a {
+  color: #00b7ff;
+}
