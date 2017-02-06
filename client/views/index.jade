@@ -2,16 +2,21 @@
 
 head
     title 
-   
-  
+     
 block content
+    script.
+        $(document).ready(function(){
+        $("#signup").on("click",function(){
+            $("#signin-modal").modal()
+         });
+         });
+
     div.container
         div#logo
         div#signup
-                button.Signinbutton(
-                type= "button"
-                 onclick = "return loadsigin()"
-                ) SignIn
+                button#Signinbutton(
+                onclick="return function(){$('#signin-modal').modal()}"
+                type= "button" ) SignIn
 
              //modalsignin declaration
       #signin-modal.modal.fade

@@ -13,7 +13,7 @@ import com.moviefy.entity.User;
 
 
 @Repository
-public class UserTableAccessImpl implements UsertableAccess {
+public class UserTableAccessImpl implements UserTableAccess {
 
 	
 	@PersistenceContext

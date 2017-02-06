@@ -11,13 +11,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.moviefy.entity.User;
 import com.moviefy.exception.BadRequestException;
-import com.moviefy.repository.UsertableAccess;
+import com.moviefy.repository.UserTableAccess;
 
 @Service
 public class LogonAccessImpl implements LogonAccess{
 
 	@Autowired
-	private UsertableAccess userrepo;
+	private UserTableAccess userrepo;
 
 	
 	

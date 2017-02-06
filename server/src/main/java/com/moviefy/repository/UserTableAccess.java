@@ -1,11 +1,8 @@
 package com.moviefy.repository;
-
-
-
 import java.util.List;
 
 import com.moviefy.entity.*;
-public interface UsertableAccess {
+public interface UserTableAccess {
 
 	public List<User> findall();
 	
