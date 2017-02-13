@@ -14,5 +14,8 @@ public interface MovieAccess {
 	
 	public List<Movies> findbyname(String type, String name);
 	
+	public Movies findbyid(String id);
+	
+	public Movies writecomments(int userid, String Movieid, String comments );
 	
 }

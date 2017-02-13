@@ -11,6 +11,8 @@ public interface MovieTableAcess {
 	public Movies create(Movies movies);
 	
 	public List<Movies> findall();
+	
+	public Movies findbyid(String id);
 	 
 	public List<Movies> findmovie(String type, String name);
 	

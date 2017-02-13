@@ -28,11 +28,7 @@ public class MovieTableAccessImpl implements MovieTableAcess {
 		TypedQuery<Movies> query = em.createNamedQuery("Movies.findall", Movies.class);
 		List<Movies> movies = query.getResultList();
 		
-		for(Movies movie : movies){
-			UserMovieInteraction usermovieinteraction = new UserMovieInteractImpl();
-			List<UserMovieInteract> commentslist = usermovieinteraction.Getcomments(movie.getId());
-			movie.setUsercommnets(commentslist);
-		}
+		
 
 		if(movies == null)
 				throw new BadRequestException("Improper input Error");
@@ -51,11 +47,6 @@ public class MovieTableAccessImpl implements MovieTableAcess {
 		
 		List<Movies> movies = query.getResultList();
 		
-		for(Movies movie : movies){
-			UserMovieInteraction usermovieinteraction = new UserMovieInteractImpl();
-			List<UserMovieInteract> commentslist = usermovieinteraction.Getcomments(movie.getId());
-			movie.setUsercommnets(commentslist);
-		}
 
 		if(movies == null)	
 				throw new BadRequestException("Improper input Error");
@@ -72,11 +63,6 @@ public class MovieTableAccessImpl implements MovieTableAcess {
 		
 		List<Movies> movies = query.getResultList();
 		
-		for(Movies movie : movies){
-			UserMovieInteraction usermovieinteraction = new UserMovieInteractImpl();
-			List<UserMovieInteract> commentslist = usermovieinteraction.Getcomments(movie.getId());
-			movie.setUsercommnets(commentslist);
-		}
 
 		if(movies == null)	
 				throw new BadRequestException("Improper input Error");
@@ -96,6 +82,24 @@ public class MovieTableAccessImpl implements MovieTableAcess {
 				
 				throw new BadRequestException("Improper Request");
 			}
+	}
+
+	@Override
+	public Movies findbyid(String id) {
+		
+		TypedQuery<Movies> query = em.createNamedQuery("Movies.findbyid",Movies.class);
+		query.setParameter("pimdbid", id);
+		
+		Movies movie = query.getSingleResult();
+		
+		if(movie != null)
+			{
+			return movie;
+			}
+		else
+			 throw new BadRequestException("Improper Request");
+		
+		
 	}
 	
 

@@ -2,22 +2,23 @@ package com.moviefy.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @NamedQueries(
-		@NamedQuery(name="Comments.Moviecomments",query= "select mi from  movieinteraction mi where idMovielist = :pMovieid")
+		@NamedQuery(name="Comments.Moviecomments",query= "select mi from  UserMovieInteract mi where mi.movieid = :pMovieid")
 		)
 @Table(name ="movieinteraction",schema="movielist")
 public class UserMovieInteract {
 
-	
-	@Column(name ="idMovieinteratcion")
+	@Id
+	@Column(name ="idMovieinteraction")
 	private int id;
 	@Column(name ="idMovielist")
-	private int movieid;
+	private String  movieid;
 	@Column(name ="idUser")
 	private int iduser;
 	@Column(name ="Comments")
@@ -30,10 +31,10 @@ public class UserMovieInteract {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getMovieid() {
+	public String getMovieid() {
 		return movieid;
 	}
-	public void setMovieid(int movieid) {
+	public void setMovieid(String movieid) {
 		this.movieid = movieid;
 	}
 	public int getIduser() {

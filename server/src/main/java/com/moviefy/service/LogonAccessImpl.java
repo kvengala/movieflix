@@ -19,9 +19,7 @@ public class LogonAccessImpl implements LogonAccess{
 	@Autowired
 	private UserTableAccess userrepo;
 
-	
-	
-	
+
 	@Override
 	public User adduser(User user) {
 	

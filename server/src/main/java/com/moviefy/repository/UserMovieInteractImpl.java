@@ -38,9 +38,6 @@ public class UserMovieInteractImpl implements UserMovieInteraction {
 		
 		List<UserMovieInteract> usermovielist = query.getResultList();
 		
-		if(usermovielist == null)
-			throw new BadRequestException("Improper Parameter ");
-		
 		return usermovielist;	
 		
 	}

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -12,6 +13,7 @@ import com.moviefy.entity.UserMovieInteract;
 
 @Entity
 @NamedQueries({
+	@NamedQuery(name="Movies.findbyid",query="select m from Movies m where m.id = :pimdbid"),
 	@NamedQuery(name = "Movies.findall", query = "select m from Movies m"),
 	@NamedQuery(name = "Movies.findbytpe", query = "select m from Movies m where m.list_type = :pListtype  "),
 	@NamedQuery(name = "Movies.findbyname", query = "select m from Movies m where m.list_type = :pListtype and m.list_title like \":ptiltle\"  ")
@@ -19,6 +21,7 @@ import com.moviefy.entity.UserMovieInteract;
 })
 @Table(name ="moviedetail",schema="movielist")
 public class Movies {
+	@Id
 	@Column(name ="list_imdbID")
 	private String id;
 	@Column(name ="list_title")
@@ -29,7 +32,7 @@ public class Movies {
 	private  String list_rated;
 	@Column(name ="list_released")
 	private  String list_released;
-	@Column(name ="list_runtimee")
+	@Column(name ="list_runtime")
 	private String list_runtime;
 	@Column(name ="list_genre")
 	private  String list_genre;
